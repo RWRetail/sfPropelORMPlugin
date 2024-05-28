@@ -696,7 +696,7 @@ class sfPropelDatabaseSchema
           }
           else
           {
-            if (isset($attributes['type']))
+            if (isset($attributes['type']) && !is_array($attributes['type']))
             {
               // compact type given as value of the type attribute
               $this->database[$table][$column] = array_merge($this->database[$table][$column], $this->getAttributesFromCompactType($attributes['type']));
